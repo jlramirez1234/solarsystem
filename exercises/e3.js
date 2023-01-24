@@ -5,10 +5,11 @@ import { data } from "../data/data";
 // Return example: [1, 2, ... , N]
 
 export function getAllAverageTemperatures(data) {
-  // Your code goes here...
+  const avgTemp = data.planets.map(temp => temp.avgTemp);
+  return avgTemp;
 }
 
-
+//I literally spent like 20 minutes on this dang question because I was getting the array of avergeTemp and then getting the array from map to then .reduce and divide by the number of planets. I assumed you wanted one single answer until I went back and really reread the question. lol
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-3"

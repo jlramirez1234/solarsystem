@@ -5,7 +5,9 @@ import { data } from "../data/data";
 // Return example: 234234.234
 
 export function getOrbitalPeriodsSum(data) {
-  // Your code goes here...
+  const totalArray = data.asteroids.map(rock => rock.orbitalPeriod);
+  const sumOfItAll = totalArray.reduce((acc, curr) => acc + curr , 0);
+  return sumOfItAll;
 }
 
 

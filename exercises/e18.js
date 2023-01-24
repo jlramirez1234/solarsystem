@@ -5,8 +5,30 @@ import { data } from "../data/data";
 // Return example: 1902
 
 export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
-  // feel free to import your `maxBy` or `minBy` methods from previous lessons
+  const asteroids = data.asteroids;
+  const arrayOfYears = asteroids.map((rock) => rock.discoveryYear);
+
+  let frequencyMap = {};
+  let maxFrequency = 0;
+  let mostFrequent;
+
+  for (let i = 0; i < arrayOfYears.length; i++) {
+    let year = arrayOfYears[i];
+    if (frequencyMap[year]) {
+      frequencyMap[year]++;
+    } else {
+      frequencyMap[year] = 1;
+    }
+  }
+
+  for (let year in frequencyMap) {
+    if (frequencyMap[year] > maxFrequency) {
+      maxFrequency = frequencyMap[year];
+      mostFrequent = year;
+    }
+  }
+
+  return Number(mostFrequent);
 }
 
 // === TEST YOURSELF ===
